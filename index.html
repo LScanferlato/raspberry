@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timelapse Controller</title>
+</head>
+<body>
+    <h1>Controllo Timelapse</h1>
+    <p>Stato registrazione: {{ 'In corso' if is_recording else 'Fermato' }}</p>
+    <form action="/start" method="post">
+        <button type="submit" {% if is_recording %}disabled{% endif %}>Avvia Timelapse</button>
+    </form>
+</body>
+</html>
